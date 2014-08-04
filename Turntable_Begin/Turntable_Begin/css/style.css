@@ -1,0 +1,28 @@
+.container {
+    background:rgb(240,240,240);
+    width:350px;
+    height:650px;
+    position:relative;
+    margin:auto;
+    box-shadow:1px 1px 6px rgba(0,0,0,0.4);
+}
+
+.productTurntable {
+    position:absolute;
+    left:40px
+}
+
+.progressBarContainer{
+    position:absolute;
+    border:1px solid;
+    height:3px;
+    width:260px;
+    display: none;
+}
+
+.animateBar {
+    position:relative;
+    height:3px;
+    width:76px;
+    background:black;
+}
