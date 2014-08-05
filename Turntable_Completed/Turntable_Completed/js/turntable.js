@@ -16,10 +16,11 @@ function turntable(filepath){
 	(function tableRun(preload){
 		if(preload){
 			// Cache images in
-			if(framesLoaded < endFrame){
+			if(framesLoaded <= endFrame){
 				frames[framesLoaded] = new Image();
 				frames[framesLoaded].src = createPath(framesLoaded);
 				frames[framesLoaded].onload = function(){
+					// Animate the progress bar
 					var progressBarWidth = (framesLoaded / endFrame) * progressBarMax;
 					progressBarEl.width(progressBarWidth);
 					framesLoaded ++;
@@ -29,13 +30,12 @@ function turntable(filepath){
 				progressBarEl.parent().fadeOut(100);
 				tableRun(false);
 			}
-
 		} else {
 			// Play the animation
 			var frameCounter = 0;
 			setInterval(function(){
 				turntableImg.attr('src', createPath(frameCounter));
-				if(frameCounter < frames.length){
+				if(frameCounter < endFrame){
 					frameCounter ++;
 				} else {
 					frameCounter = 0;
